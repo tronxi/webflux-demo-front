@@ -1,0 +1,16 @@
+<button (click)="findStream()">Reactive</button>
+<ul>
+  <li *ngFor="let demo of demoStream">
+    title: {{ demo.title }}
+  </li>
+</ul>
+
+<button (click)="find()">Non-Reactive</button>
+<ul>
+  <li *ngFor="let demo of demoList">
+    title: {{ demo.title }}
+  </li>
+  <span *ngIf="showLoading">
+    loading...
+  </span>
+</ul>

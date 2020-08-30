@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "webflux-demo-front"
+    }
+  },
+  "defaultProject": "webflux-demo-front",
+  "cli": {
+    "analytics": "529afc82-6632-49b0-9a78-917159d505f3"
+  }
 }
