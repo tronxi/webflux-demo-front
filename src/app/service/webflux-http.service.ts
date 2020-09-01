@@ -12,7 +12,7 @@ export class WebfluxHttpService {
 
   findDemoStream(): Observable<any> {
     return new Observable(observer => {
-      const eventSource = new EventSource('http://localhost:8080/webflux/demo/stream');
+      const eventSource = new EventSource('http://localhost:8080/webflux/demo/parallel/stream');
       eventSource.onmessage = event => {
         this.zone.run(() => {
           observer.next(event);
@@ -24,6 +24,10 @@ export class WebfluxHttpService {
         });
       };
     });
+  }
+
+  findDemoParallel(): Observable<any> {
+    return this.http.get('http://localhost:8080/webflux/demo/parallel');
   }
 
   findDemo(): Observable<any> {

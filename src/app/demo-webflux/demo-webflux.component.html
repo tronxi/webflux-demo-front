@@ -1,16 +1,35 @@
-<button (click)="findStream()">Reactive</button>
+<button (click)="findStream()">Find Parallel Stream</button>
 <ul>
   <li *ngFor="let demo of demoStream">
     title: {{ demo.title }}
   </li>
+  <span>
+    {{findStreamTime}}
+  </span>
 </ul>
 
-<button (click)="find()">Non-Reactive</button>
+<button (click)="findParallel()">Find Parallel</button>
+<ul>
+  <li *ngFor="let demo of demoListParallel">
+    title: {{ demo.title }}
+  </li>
+  <span *ngIf="showLoadingParallel">
+    loading...
+  </span>
+  <span *ngIf="!showLoadingParallel">
+    {{findParallelTime}}
+  </span>
+</ul>
+
+<button (click)="find()">Find</button>
 <ul>
   <li *ngFor="let demo of demoList">
     title: {{ demo.title }}
   </li>
   <span *ngIf="showLoading">
     loading...
+  </span>
+  <span *ngIf="!showLoading">
+    {{findTime}}
   </span>
 </ul>
